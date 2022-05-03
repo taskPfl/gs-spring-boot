@@ -15,7 +15,7 @@ variables:
   webAppName: 'java-spring-boot'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  name: Default
 
 stages:
 - stage: Build
@@ -24,7 +24,7 @@ stages:
   - job: MavenPackageAndPublishArtifacts
     displayName: Maven Package and Publish Artifacts
     pool:
-      vmImage: $(vmImageName)
+      name: Default
     
     steps:
     - task: Maven@3
